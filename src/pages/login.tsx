@@ -5,6 +5,8 @@ export default function Login() {
     const result = await axios.post("http://172.20.110.45:4003/auth/login", {
       email,
       password,
+      clientId: process.env.CLIENT_ID,
+      secret: process.env.API_KEY,
     });
     console.log(result);
   };
